@@ -11,6 +11,7 @@ import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -23,6 +24,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     AppCompatButton CelebrateBtn,ADDBtn,rqst,plusbtn,addEventBtn,UserBtn,groupbtn;
+
+    LinearLayout Addgourpbtn;
 
     ImageSlider imageSlider;
     ListView listView;
@@ -49,14 +52,16 @@ public class MainActivity extends AppCompatActivity {
         addEventBtn=findViewById(R.id.addEventbtn);
         UserBtn = findViewById(R.id.Userbtn);
         ByMediaType = findViewById(R.id.ByMediaType);
-        groupbtn=findViewById(R.id.groupbtn);
+        Addgourpbtn = findViewById(R.id.AddGroup);
 
-        groupbtn.setOnClickListener(new View.OnClickListener() {
+        Addgourpbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), onboardingpage.class));
+                startActivity(new Intent(getApplicationContext(), addgrouppage.class));
             }
         });
+
+//
 
         ByMediaType.setOnClickListener(new View.OnClickListener() {
             @Override
