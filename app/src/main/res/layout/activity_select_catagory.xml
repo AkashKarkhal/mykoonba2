@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainactivityback"
+    tools:context=".SelectCatagory">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/backward"
+        android:id="@+id/Backkk"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1) Select Catagory"
+            android:backgroundTint="@color/white"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/regular"
+            android:layout_below="@id/Backkk"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:id="@+id/SelectcatagoryNm"
+            android:layout_margin="10dp"/>
+
+  <ListView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/Catagorylistview"
+      android:layout_below="@id/SelectcatagoryNm">
+
+
+  </ListView>
+
+
+
+</RelativeLayout>

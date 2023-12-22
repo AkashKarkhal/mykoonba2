@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".celebrateactivity"
+    android:background="@drawable/mainactivityback">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollIndicators="none"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/inviteLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:src="@drawable/peopleback"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:paddingTop="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/PlusBtn"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/add"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/PlusBtn"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="Invite"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+              <com.denzcoskun.imageslider.ImageSlider
+                  android:id="@+id/image_slider"
+                  android:layout_width="match_parent"
+                  android:layout_height="150dp"
+                  android:layout_marginVertical="20dp"
+                  app:iss_corner_radius="20"
+                  app:iss_auto_cycle="true"
+                  app:iss_delay="2000"
+                  app:iss_period="1000"
+                  app:iss_text_align="CENTER" />
+
+          </RelativeLayout>
+
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:background="#039BE5"
+                android:text="Access Your Traditions\nand\nCelebrate Your Memory"
+                android:id="@+id/CelebrateBtn"
+                android:textColor="@color/white"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:backgroundTint="#039BE5"
+                            app:cardCornerRadius="8dp"
+                            android:id="@+id/ByMediaType">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+
+                                android:text="By Media Type"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:backgroundTint="#039BE5"
+                            app:cardCornerRadius="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="By Date Posted"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:background="@drawable/img"
+                    android:layout_margin="10dp"/>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:backgroundTint="#039BE5"
+                app:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="7dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Upcoming Events"
+                            android:textColor="@color/white"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:layout_weight="1"/>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_centerInParent="true"
+                            android:backgroundTint="@color/white"
+                            android:text="November 2024"
+                            android:textSize="10sp"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp">
+
+
+                        <ListView
+                            android:id="@+id/listEvents"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/addEventbtn"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/add"
+                            android:backgroundTint="@color/black"
+                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:backgroundTint="#039BE5"
+                app:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Preserve a Tradition"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/ADDBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:backgroundTint="@color/white"
+                                android:text="ADD"
+                                android:textColor="@color/black" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/rqst"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:backgroundTint="@color/white"
+                                android:text="Request"
+                                android:textColor="@color/black" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="20dp"-->
+<!--                android:layout_marginVertical="10dp"-->
+<!--                app:cardCornerRadius="20dp">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:padding="5dp"-->
+<!--                    >-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="#039BE5"-->
+<!--                        android:gravity="center"-->
+<!--                        android:paddingVertical="5dp"-->
+<!--                        android:text="Memories - Gallary "-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginHorizontal="5dp"-->
+<!--                        android:background="@color/black"-->
+<!--                        android:paddingVertical="5dp">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_centerInParent="true">-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginHorizontal="10dp"-->
+<!--                                android:layout_marginVertical="5dp"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:orientation="vertical">-->
+
+<!--                                <RelativeLayout-->
+<!--                                    android:layout_width="40dp"-->
+<!--                                    android:layout_height="40dp">-->
+
+<!--                                    <androidx.appcompat.widget.AppCompatButton-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_centerHorizontal="true"-->
+<!--                                        android:background="@drawable/home"-->
+<!--                                        android:backgroundTint="@color/white"-->
+<!--                                        tools:ignore="TooDeepLayout" />-->
+
+<!--                                </RelativeLayout>-->
+
+
+<!--                            </LinearLayout>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginHorizontal="10dp"-->
+<!--                                android:layout_marginVertical="5dp"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:orientation="vertical">-->
+
+<!--                                <RelativeLayout-->
+<!--                                    android:layout_width="40dp"-->
+<!--                                    android:layout_height="40dp">-->
+
+<!--                                    <androidx.appcompat.widget.AppCompatButton-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_centerInParent="true"-->
+<!--                                        android:background="@drawable/gallery"-->
+<!--                                        android:backgroundTint="@color/white" />-->
+
+<!--                                </RelativeLayout>-->
+
+
+<!--                            </LinearLayout>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginHorizontal="10dp"-->
+<!--                                android:layout_marginVertical="5dp"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:orientation="vertical">-->
+
+<!--                                <RelativeLayout-->
+<!--                                    android:layout_width="40dp"-->
+<!--                                    android:layout_height="40dp">-->
+
+<!--                                    <androidx.appcompat.widget.AppCompatButton-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_centerInParent="true"-->
+<!--                                        android:background="@drawable/pl"-->
+<!--                                        android:backgroundTint="@color/white" />-->
+
+<!--                                </RelativeLayout>-->
+
+
+<!--                            </LinearLayout>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginHorizontal="10dp"-->
+<!--                                android:layout_marginVertical="5dp"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:orientation="vertical">-->
+
+<!--                                <RelativeLayout-->
+<!--                                    android:layout_width="40dp"-->
+<!--                                    android:layout_height="40dp">-->
+
+<!--                                    <androidx.appcompat.widget.AppCompatButton-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_centerInParent="true"-->
+<!--                                        android:background="@drawable/note"-->
+<!--                                        android:backgroundTint="@color/white" />-->
+
+<!--                                </RelativeLayout>-->
+
+
+<!--                            </LinearLayout>-->
+
+
+<!--                        </LinearLayout>-->
+
+<!--                    </RelativeLayout>-->
+
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="#039BE5"
+                    app:cardCornerRadius="20dp"
+                    android:id="@+id/groupdcardview">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/mynetworktxt">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="My Network"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:layout_margin="15dp"
+                            android:textColor="@color/white"
+                            android:layout_weight="1"
+                           />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/group"
+                            android:layout_margin="15dp"/>
+
+                    </LinearLayout>
+
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+           
+
+
+<!-- extra layout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="My Koonba"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bottomtab"
+                android:backgroundTint="#EFE9E9"
+                android:orientation="horizontal"
+                >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/baseline_search_24" />
+                </RelativeLayout>
+
+
+                <EditText
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#EFE9E9"
+                    android:textSize="15sp"
+                    android:hint="Search"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+    <!--  Botttom Navigation Bar           -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bottomtab"
+            android:paddingHorizontal="15dp"
+            android:paddingTop="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="35dp"
+                    android:layout_height="35dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Userbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/user"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Profile"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="35dp"
+                    android:layout_height="35dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/groupbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/group" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Network"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="35dp"
+                    android:layout_height="35dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/home"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Home"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="35dp"
+                    android:layout_height="35dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/bell"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Notification"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="35dp"
+                    android:layout_height="35dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/settings"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Setting"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

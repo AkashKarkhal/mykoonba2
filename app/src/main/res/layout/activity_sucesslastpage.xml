@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sucesslastpage"
+    android:background="@drawable/mainactivityback">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/backward"
+        android:id="@+id/Backward" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_below="@id/Backward"
+    android:gravity="center">
+
+
+    <TextView
+        android:id="@+id/Congratulation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginHorizontal="10dp"
+        android:text="Congratulations"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@id/Congratulation"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/success" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Exittn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lottie"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="10dp"
+        android:background="#039BE5"
+        android:text="exit"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Shared with Koonba"
+        android:textSize="20sp"
+        android:layout_below="@id/Exittn"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"/>
+</LinearLayout>
+
+
+
+</RelativeLayout>
