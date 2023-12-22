@@ -20,14 +20,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/inviteLinearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button"
-                android:visibility="gone">
+                app:layout_constraintTop_toBottomOf="@+id/button">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -70,37 +71,32 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-          <RelativeLayout
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/image_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginVertical="20dp"
+                    app:iss_auto_cycle="true"
+                    app:iss_corner_radius="20"
+                    app:iss_delay="2000"
+                    app:iss_period="1000"
+                    app:iss_text_align="CENTER" />
 
-              <com.denzcoskun.imageslider.ImageSlider
-                  android:id="@+id/image_slider"
-                  android:layout_width="match_parent"
-                  android:layout_height="150dp"
-                  android:layout_marginVertical="20dp"
-                  app:iss_corner_radius="20"
-                  app:iss_auto_cycle="true"
-                  app:iss_delay="2000"
-                  app:iss_period="1000"
-                  app:iss_text_align="CENTER" />
-
-          </RelativeLayout>
-
-
-
-
+            </RelativeLayout>
 
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/CelebrateBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="10dp"
                 android:background="#039BE5"
                 android:text="Access Your Traditions\nand\nCelebrate Your Memory"
-                android:id="@+id/CelebrateBtn"
                 android:textColor="@color/white"
                 android:textSize="18sp">
 
@@ -109,70 +105,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button"
-                android:orientation="horizontal">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:orientation="vertical">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="15dp"
-                            android:backgroundTint="#039BE5"
-                            app:cardCornerRadius="8dp"
-                            android:id="@+id/ByMediaType">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="10dp"
-
-                                android:text="By Media Type"
-                                android:textColor="@color/white"
-                                android:textSize="18sp" />
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="15dp"
-                            android:backgroundTint="#039BE5"
-                            app:cardCornerRadius="8dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="10dp"
-                                android:text="By Date Posted"
-                                android:textColor="@color/white"
-                                android:textSize="18sp" />
-
-                        </androidx.cardview.widget.CardView>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-
-
+                app:layout_constraintTop_toBottomOf="@+id/button">
 
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="170dp"
-                    android:background="@drawable/img"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="10dp"
+                    android:background="@drawable/img" />
 
             </LinearLayout>
 
@@ -187,37 +130,38 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="7dp"
                         android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="7dp"
                         android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="Upcoming Events"
                             android:textColor="@color/white"
                             android:textSize="17sp"
-                            android:textStyle="bold"
-                            android:layout_weight="1"/>
+                            android:textStyle="bold" />
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:layout_centerInParent="true"
+                            android:layout_weight="1"
                             android:backgroundTint="@color/white"
                             android:text="November 2024"
-                            android:textSize="10sp"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textSize="10sp" />
 
                     </LinearLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="200dp">
+                        android:layout_height="wrap_content">
 
 
                         <ListView
@@ -229,20 +173,9 @@
                             android:background="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/addEventbtn"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginEnd="20dp"
-                            android:layout_marginBottom="20dp"
-                            android:background="@drawable/add"
-                            android:backgroundTint="@color/black"
-                            android:gravity="center"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent" />
+
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -316,197 +249,189 @@
             </androidx.cardview.widget.CardView>
 
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginHorizontal="20dp"-->
-<!--                android:layout_marginVertical="10dp"-->
-<!--                app:cardCornerRadius="20dp">-->
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginHorizontal="20dp"-->
+            <!--                android:layout_marginVertical="10dp"-->
+            <!--                app:cardCornerRadius="20dp">-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="vertical"-->
-<!--                    android:padding="5dp"-->
-<!--                    >-->
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="vertical"-->
+            <!--                    android:padding="5dp"-->
+            <!--                    >-->
 
-<!--                    <TextView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:background="#039BE5"-->
-<!--                        android:gravity="center"-->
-<!--                        android:paddingVertical="5dp"-->
-<!--                        android:text="Memories - Gallary "-->
-<!--                        android:textColor="@color/white"-->
-<!--                        android:textSize="20sp"-->
-<!--                        android:textStyle="bold" />-->
+            <!--                    <TextView-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:background="#039BE5"-->
+            <!--                        android:gravity="center"-->
+            <!--                        android:paddingVertical="5dp"-->
+            <!--                        android:text="Memories - Gallary "-->
+            <!--                        android:textColor="@color/white"-->
+            <!--                        android:textSize="20sp"-->
+            <!--                        android:textStyle="bold" />-->
 
-<!--                    <RelativeLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginHorizontal="5dp"-->
-<!--                        android:background="@color/black"-->
-<!--                        android:paddingVertical="5dp">-->
+            <!--                    <RelativeLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginHorizontal="5dp"-->
+            <!--                        android:background="@color/black"-->
+            <!--                        android:paddingVertical="5dp">-->
 
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_centerInParent="true">-->
+            <!--                        <LinearLayout-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_centerInParent="true">-->
 
-<!--                            <LinearLayout-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_marginHorizontal="10dp"-->
-<!--                                android:layout_marginVertical="5dp"-->
-<!--                                android:layout_weight="1"-->
-<!--                                android:orientation="vertical">-->
+            <!--                            <LinearLayout-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="wrap_content"-->
+            <!--                                android:layout_marginHorizontal="10dp"-->
+            <!--                                android:layout_marginVertical="5dp"-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:orientation="vertical">-->
 
-<!--                                <RelativeLayout-->
-<!--                                    android:layout_width="40dp"-->
-<!--                                    android:layout_height="40dp">-->
+            <!--                                <RelativeLayout-->
+            <!--                                    android:layout_width="40dp"-->
+            <!--                                    android:layout_height="40dp">-->
 
-<!--                                    <androidx.appcompat.widget.AppCompatButton-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="match_parent"-->
-<!--                                        android:layout_centerHorizontal="true"-->
-<!--                                        android:background="@drawable/home"-->
-<!--                                        android:backgroundTint="@color/white"-->
-<!--                                        tools:ignore="TooDeepLayout" />-->
+            <!--                                    <androidx.appcompat.widget.AppCompatButton-->
+            <!--                                        android:layout_width="match_parent"-->
+            <!--                                        android:layout_height="match_parent"-->
+            <!--                                        android:layout_centerHorizontal="true"-->
+            <!--                                        android:background="@drawable/home"-->
+            <!--                                        android:backgroundTint="@color/white"-->
+            <!--                                        tools:ignore="TooDeepLayout" />-->
 
-<!--                                </RelativeLayout>-->
-
-
-<!--                            </LinearLayout>-->
-
-<!--                            <LinearLayout-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_marginHorizontal="10dp"-->
-<!--                                android:layout_marginVertical="5dp"-->
-<!--                                android:layout_weight="1"-->
-<!--                                android:orientation="vertical">-->
-
-<!--                                <RelativeLayout-->
-<!--                                    android:layout_width="40dp"-->
-<!--                                    android:layout_height="40dp">-->
-
-<!--                                    <androidx.appcompat.widget.AppCompatButton-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="match_parent"-->
-<!--                                        android:layout_centerInParent="true"-->
-<!--                                        android:background="@drawable/gallery"-->
-<!--                                        android:backgroundTint="@color/white" />-->
-
-<!--                                </RelativeLayout>-->
+            <!--                                </RelativeLayout>-->
 
 
-<!--                            </LinearLayout>-->
+            <!--                            </LinearLayout>-->
 
-<!--                            <LinearLayout-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_marginHorizontal="10dp"-->
-<!--                                android:layout_marginVertical="5dp"-->
-<!--                                android:layout_weight="1"-->
-<!--                                android:orientation="vertical">-->
+            <!--                            <LinearLayout-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="wrap_content"-->
+            <!--                                android:layout_marginHorizontal="10dp"-->
+            <!--                                android:layout_marginVertical="5dp"-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:orientation="vertical">-->
 
-<!--                                <RelativeLayout-->
-<!--                                    android:layout_width="40dp"-->
-<!--                                    android:layout_height="40dp">-->
+            <!--                                <RelativeLayout-->
+            <!--                                    android:layout_width="40dp"-->
+            <!--                                    android:layout_height="40dp">-->
 
-<!--                                    <androidx.appcompat.widget.AppCompatButton-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="match_parent"-->
-<!--                                        android:layout_centerInParent="true"-->
-<!--                                        android:background="@drawable/pl"-->
-<!--                                        android:backgroundTint="@color/white" />-->
+            <!--                                    <androidx.appcompat.widget.AppCompatButton-->
+            <!--                                        android:layout_width="match_parent"-->
+            <!--                                        android:layout_height="match_parent"-->
+            <!--                                        android:layout_centerInParent="true"-->
+            <!--                                        android:background="@drawable/gallery"-->
+            <!--                                        android:backgroundTint="@color/white" />-->
 
-<!--                                </RelativeLayout>-->
-
-
-<!--                            </LinearLayout>-->
-
-<!--                            <LinearLayout-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_marginHorizontal="10dp"-->
-<!--                                android:layout_marginVertical="5dp"-->
-<!--                                android:layout_weight="1"-->
-<!--                                android:orientation="vertical">-->
-
-<!--                                <RelativeLayout-->
-<!--                                    android:layout_width="40dp"-->
-<!--                                    android:layout_height="40dp">-->
-
-<!--                                    <androidx.appcompat.widget.AppCompatButton-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="match_parent"-->
-<!--                                        android:layout_centerInParent="true"-->
-<!--                                        android:background="@drawable/note"-->
-<!--                                        android:backgroundTint="@color/white" />-->
-
-<!--                                </RelativeLayout>-->
+            <!--                                </RelativeLayout>-->
 
 
-<!--                            </LinearLayout>-->
+            <!--                            </LinearLayout>-->
+
+            <!--                            <LinearLayout-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="wrap_content"-->
+            <!--                                android:layout_marginHorizontal="10dp"-->
+            <!--                                android:layout_marginVertical="5dp"-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:orientation="vertical">-->
+
+            <!--                                <RelativeLayout-->
+            <!--                                    android:layout_width="40dp"-->
+            <!--                                    android:layout_height="40dp">-->
+
+            <!--                                    <androidx.appcompat.widget.AppCompatButton-->
+            <!--                                        android:layout_width="match_parent"-->
+            <!--                                        android:layout_height="match_parent"-->
+            <!--                                        android:layout_centerInParent="true"-->
+            <!--                                        android:background="@drawable/pl"-->
+            <!--                                        android:backgroundTint="@color/white" />-->
+
+            <!--                                </RelativeLayout>-->
 
 
-<!--                        </LinearLayout>-->
+            <!--                            </LinearLayout>-->
 
-<!--                    </RelativeLayout>-->
+            <!--                            <LinearLayout-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="wrap_content"-->
+            <!--                                android:layout_marginHorizontal="10dp"-->
+            <!--                                android:layout_marginVertical="5dp"-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:orientation="vertical">-->
 
-<!--                </LinearLayout>-->
-<!--            </LinearLayout>-->
+            <!--                                <RelativeLayout-->
+            <!--                                    android:layout_width="40dp"-->
+            <!--                                    android:layout_height="40dp">-->
+
+            <!--                                    <androidx.appcompat.widget.AppCompatButton-->
+            <!--                                        android:layout_width="match_parent"-->
+            <!--                                        android:layout_height="match_parent"-->
+            <!--                                        android:layout_centerInParent="true"-->
+            <!--                                        android:background="@drawable/note"-->
+            <!--                                        android:backgroundTint="@color/white" />-->
+
+            <!--                                </RelativeLayout>-->
 
 
+            <!--                            </LinearLayout>-->
 
-                <androidx.cardview.widget.CardView
+
+            <!--                        </LinearLayout>-->
+
+            <!--                    </RelativeLayout>-->
+
+            <!--                </LinearLayout>-->
+            <!--            </LinearLayout>-->
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/groupdcardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:backgroundTint="#039BE5"
+                app:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:id="@+id/mynetworktxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:backgroundTint="#039BE5"
-                    app:cardCornerRadius="20dp"
-                    android:id="@+id/groupdcardview">
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:id="@+id/mynetworktxt">
+                        android:layout_margin="15dp"
+                        android:layout_weight="1"
+                        android:text="My Network"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="My Network"
-                            android:textStyle="bold"
-                            android:textSize="20sp"
-                            android:layout_margin="15dp"
-                            android:textColor="@color/white"
-                            android:layout_weight="1"
-                           />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="15dp"
+                        android:background="@drawable/group" />
 
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:background="@drawable/group"
-                            android:layout_margin="15dp"/>
-
-                    </LinearLayout>
+                </LinearLayout>
 
 
-
-                </androidx.cardview.widget.CardView>
-
+            </androidx.cardview.widget.CardView>
 
 
-
-           
-
-
-<!-- extra layout -->
+            <!-- extra layout -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"/>
+                android:layout_height="80dp" />
         </LinearLayout>
 
     </ScrollView>
@@ -586,36 +511,41 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="5dp"
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:background="@drawable/bottomtab"
             android:paddingHorizontal="15dp"
-            android:paddingTop="5dp">
+            android:paddingVertical="1dp">
+
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
 
                 <RelativeLayout
-                    android:layout_width="35dp"
-                    android:layout_height="35dp">
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center">
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/Userbtn"
+                        android:id="@+id/Homemain"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
-                        android:background="@drawable/user"
+                        android:background="@drawable/homebtnn"
                         android:backgroundTint="@color/white" />
 
                 </RelativeLayout>
@@ -625,44 +555,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Profile"
-                    android:textColor="@color/white"
-                    android:textSize="10sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="5dp"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:layout_width="35dp"
-                    android:layout_height="35dp">
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/home"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/group" />
-
-                </RelativeLayout>
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:text="Home"
+                    android:visibility="gone"
                     android:textColor="@color/white"
                     android:textSize="10sp" />
 
 
             </LinearLayout>
+
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -670,45 +571,17 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="5dp"
                 android:orientation="vertical"
-                >
+                android:layout_gravity="center_vertical"
+
+                android:layout_weight="1">
 
                 <RelativeLayout
-                    android:layout_width="35dp"
-                    android:layout_height="35dp">
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center">
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/addgroup"
-                        android:id="@+id/AddGroup"/>
-
-                </RelativeLayout>
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="ADD"
-                    android:textColor="@color/white"
-                    android:textSize="10sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="5dp"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:layout_width="35dp"
-                    android:layout_height="35dp">
-
-                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/notibtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
@@ -723,6 +596,79 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Notification"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+
+                <RelativeLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatButton
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/addgroup" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="ADD"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:visibility="gone"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/AddEventbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/addevent"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Add Event"
+                    android:visibility="gone"
                     android:textColor="@color/white"
                     android:textSize="10sp" />
 
@@ -734,17 +680,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+
+                android:layout_weight="1">
 
                 <RelativeLayout
-                    android:layout_width="35dp"
-                    android:layout_height="35dp">
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center">
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Userbtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
-                        android:background="@drawable/settings"
+                        android:background="@drawable/pro"
                         android:backgroundTint="@color/white" />
 
                 </RelativeLayout>
@@ -754,14 +705,57 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Setting"
+                    android:text="Profile"
+                    android:visibility="gone"
                     android:textColor="@color/white"
                     android:textSize="10sp" />
 
 
             </LinearLayout>
+
         </LinearLayout>
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:layout_marginBottom="681dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout2">
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center">
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/addgroup"
+                android:id="@+id/AddGroup"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ADD"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

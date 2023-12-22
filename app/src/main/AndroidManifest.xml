@@ -17,6 +17,9 @@
         <activity
             android:name=".NetworkTabActivity"
             android:exported="false" />
+       <activity
+            android:name=".notificationscreen"
+            android:exported="false" />
         <activity
             android:name=".addgrouppage"
             android:exported="false" />

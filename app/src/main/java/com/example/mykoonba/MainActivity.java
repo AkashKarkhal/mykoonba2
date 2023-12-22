@@ -23,9 +23,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    AppCompatButton CelebrateBtn,ADDBtn,rqst,plusbtn,addEventBtn,UserBtn,groupbtn;
+    AppCompatButton CelebrateBtn,ADDBtn,rqst,plusbtn,addEventBtn,UserBtn,groupbtn,notibtn;
 
-    AppCompatButton Addgourpbtn;
+    AppCompatButton Addgourpbtn,addeventbtn,homebtn;
 
     ImageSlider imageSlider;
     ListView listView;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     CardView groupcardview,ByMediaType;
     LinearLayout networks;
-    ArrayList<String> eventList=new ArrayList<>();
+    ArrayList<String> eventList;
 
 
     @Override
@@ -49,10 +49,32 @@ public class MainActivity extends AppCompatActivity {
         networks=findViewById(R.id.mynetworktxt);
         imageSlider = findViewById(R.id.image_slider);
         listView=findViewById(R.id.listEvents);
-        addEventBtn=findViewById(R.id.addEventbtn);
         UserBtn = findViewById(R.id.Userbtn);
-        ByMediaType = findViewById(R.id.ByMediaType);
         Addgourpbtn = findViewById(R.id.AddGroup);
+        notibtn = findViewById(R.id.notibtn);
+        addeventbtn = findViewById(R.id.AddEventbtn);
+        homebtn = findViewById(R.id.Homemain);
+
+        homebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onResume();
+            }
+        });
+
+        addeventbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), upcomingeventlayout.class));
+            }
+        });
+
+        notibtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), notificationscreen.class));
+            }
+        });
 
         Addgourpbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,12 +85,12 @@ public class MainActivity extends AppCompatActivity {
 
 //
 
-        ByMediaType.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Network_content.class));
-            }
-        });
+//        ByMediaType.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getApplicationContext(), Network_content.class));
+//            }
+//        });
 
         UserBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,11 +106,7 @@ public class MainActivity extends AppCompatActivity {
         slideModels.add(new SlideModel(R.drawable.d3, ScaleTypes.CENTER_CROP));
         slideModels.add(new SlideModel(R.drawable.d2, ScaleTypes.CENTER_CROP));
 
-        eventList.add("Manjinder birthday: 17-12-2023");
-        eventList.add("31st Party: 31-12-2023");
-        eventList.add("Lohri Festival: 13-01-2024");
-        eventList.add("holi Festival: 15-03-2024");
-        eventList.add("Vaishakhi Festival: 14-04-2024");
+        eventList = new EventData().getArrayList();
 
         ArrayAdapter adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,eventList);
         listView.setAdapter(adapter);
@@ -111,12 +129,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        addEventBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), upcomingeventlayout.class));
-            }
-        });
+//        AddEventBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getApplicationContext(), upcomingeventlayout.class));
+//            }
+//        });
 
         plusbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,5 +167,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ArrayAdapter adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,eventList);
+        listView.setAdapter(adapter);
     }
 }

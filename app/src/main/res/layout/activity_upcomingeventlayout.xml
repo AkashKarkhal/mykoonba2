@@ -21,7 +21,7 @@
 
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/AddEventname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
@@ -33,7 +33,7 @@
 
 
     <DatePicker
-        android:id="@+id/datePicker"
+        android:id="@+id/Addeventdatepicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -44,7 +44,7 @@
         android:headerBackground="#039BE5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/AddEventname" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
@@ -52,11 +52,11 @@
         android:layout_marginHorizontal="30dp"
         android:backgroundTint="#039BE5"
         android:text="Add Event"
-        android:id="@+id/backeventbtn"
+        android:id="@+id/Addupeventbtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/datePicker"
+        app:layout_constraintTop_toBottomOf="@+id/Addeventdatepicker"
         android:textColor="@color/white"/>
 
 
