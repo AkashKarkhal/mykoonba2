@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MyKoonba"
         tools:targetApi="31">
         <activity
+            android:name=".NetworkTabActivity"
+            android:exported="false" />
+       <activity
             android:name=".notificationscreen"
             android:exported="false" />
         <activity

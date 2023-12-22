@@ -121,9 +121,10 @@ public class MainActivity extends AppCompatActivity {
         networks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(getApplicationContext(), Groupspage.class);
-                i.putExtra("mode","network");
-                startActivity(i);
+//                Intent i= new Intent(getApplicationContext(), Groupspage.class);
+//                i.putExtra("mode","network");
+//                startActivity(i);
+                startActivity(new Intent(getApplicationContext(),NetworkTabActivity.class));
             }
         });
 
