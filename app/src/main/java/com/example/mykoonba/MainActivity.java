@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     AppCompatButton CelebrateBtn,ADDBtn,rqst,plusbtn,addEventBtn,UserBtn,groupbtn;
 
-    LinearLayout Addgourpbtn;
+    AppCompatButton Addgourpbtn;
 
     ImageSlider imageSlider;
     ListView listView;
