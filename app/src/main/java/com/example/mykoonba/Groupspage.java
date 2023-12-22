@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -17,15 +19,13 @@ public class Groupspage extends AppCompatActivity {
     AppCompatButton sndbtn;
     String mode;
 
-    ArrayList<networklistDataModel> arrayList = new ArrayList<>();
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_groupspage);
         recyclerView = findViewById(R.id.recyclerview);
         sndbtn = findViewById(R.id.sndbtn);
+
 
         Intent i=getIntent();
         mode=i.getStringExtra("mode");
@@ -42,39 +42,47 @@ public class Groupspage extends AppCompatActivity {
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
-        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+
+        ArrayList<networklistDataModel> arrayList=new groupdata().getArrayList();
+
+
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+
+
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+//        arrayList.add(new networklistDataModel(R.drawable.img_3,"Family Group"));
+
+
 
         if(mode.equals("add")|| mode.equals("request")) {
             networklayoutAdapter adapter = new networklayoutAdapter(getApplicationContext(), arrayList,"addrequest" );
@@ -86,5 +94,9 @@ public class Groupspage extends AppCompatActivity {
             recyclerView.setAdapter(adapter);
         }
 
+
+
     }
+
+
 }

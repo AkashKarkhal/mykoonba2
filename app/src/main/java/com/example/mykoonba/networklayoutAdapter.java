@@ -2,6 +2,8 @@ package com.example.mykoonba;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +18,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.animation.content.Content;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class networklayoutAdapter extends RecyclerView.Adapter<networklayoutAdapter.ViewHolder> {
     Context context;
     String mode;
-    ArrayList<networklistDataModel> arrayList = new ArrayList<>();
+    ArrayList<networklistDataModel> arrayList ;
 
     public networklayoutAdapter(Context context, ArrayList<networklistDataModel> arrayList,String mode) {
         this.context = context;
@@ -40,7 +44,9 @@ public class networklayoutAdapter extends RecyclerView.Adapter<networklayoutAdap
     public void onBindViewHolder(@NonNull networklayoutAdapter.ViewHolder holder, int position) {
 
         holder.grpnm.setText(arrayList.get(position).name);
-        holder.grpdp.setBackgroundResource(arrayList.get(position).image);
+
+//     +
+
 
         if(mode.equals("addrequest")){
             holder.grouplayout.setOnClickListener(new View.OnClickListener() {

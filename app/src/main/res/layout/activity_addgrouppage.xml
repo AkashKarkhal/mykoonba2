@@ -35,12 +35,30 @@
 
     </LinearLayout>
 
-    <com.example.mykoonba.CircularImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:src="@drawable/img_1"
-        android:scaleType="centerCrop"/>
+    <RelativeLayout
+        android:layout_width="232dp"
+        android:layout_height="232dp"
+        android:layout_gravity="center">
+
+        <com.example.mykoonba.CircularImageView
+            android:id="@+id/fetchImageToaddGroup"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addImageBtn"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/camera"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
 
 
     <LinearLayout
@@ -79,6 +97,7 @@
                     android:textColor="@color/white"
                     android:layout_weight="1"
                     android:textSize="15sp"
+                    android:id="@+id/NameofKoonbawhileCreatinggroup"
                     android:layout_margin="10dp"/>
 
 
@@ -126,6 +145,7 @@
                     android:textColor="@color/white"
                     android:layout_weight="1"
                     android:textSize="15sp"
+                    android:id="@+id/KoonbaAboutwhilecreatinggroup"
                     android:layout_margin="10dp"/>
 
 
@@ -146,7 +166,8 @@
         android:textColor="@color/white"
         android:background="@drawable/buttonbackground"
         android:layout_marginHorizontal="35dp"
-        android:layout_marginVertical="40dp"/>
+        android:layout_marginVertical="40dp"
+        android:id="@+id/CreateButtonwhilecreatinggroup"/>
 
 
 

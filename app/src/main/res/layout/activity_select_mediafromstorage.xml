@@ -101,12 +101,14 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Submit"
+            android:text="Send"
             android:id="@+id/SubmitBtn"
             android:backgroundTint="#039BE5"
+            android:background="@drawable/buttonbackground"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_marginHorizontal="10dp"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="40dp"
             android:layout_gravity="center"/>
 
 <!--        <LinearLayout-->
