@@ -19,7 +19,8 @@
        <androidx.appcompat.widget.AppCompatButton
            android:layout_width="45dp"
            android:layout_height="45dp"
-           android:background="@drawable/backward" />
+           android:background="@drawable/backward"
+           android:id="@+id/backButtonAddGroup"/>
 
 
         <TextView

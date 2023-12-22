@@ -670,7 +670,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="5dp"
                 android:orientation="vertical"
-                android:id="@+id/AddGroup">
+                >
 
                 <RelativeLayout
                     android:layout_width="35dp"
@@ -680,7 +680,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
-                        android:background="@drawable/addgroup"/>
+                        android:background="@drawable/addgroup"
+                        android:id="@+id/AddGroup"/>
 
                 </RelativeLayout>
 
