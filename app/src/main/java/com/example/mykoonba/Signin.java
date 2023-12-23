@@ -41,8 +41,10 @@ public class Signin extends AppCompatActivity {
         Createaccountbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Verification_email_of_signin.class));
-            }
+                Intent i=new Intent(getApplicationContext(), Verification_email_of_signin.class);
+                i.putExtra("mode","signin");
+                startActivity(i);
+                finish();            }
         });
 
 
