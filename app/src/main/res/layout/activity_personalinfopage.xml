@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".personalinfopage"
+    android:background="@drawable/profilepicback"
     android:orientation="vertical">
 
 <!--    header-->
@@ -17,7 +18,8 @@
            android:layout_width="40dp"
            android:layout_height="40dp"
            android:background="@drawable/backward"
-           android:layout_margin="10dp"/>
+           android:layout_margin="10dp"
+           android:id="@+id/backbtnpersonal"/>
 
 
        <TextView
@@ -35,12 +37,29 @@
 
    </LinearLayout>
 
-    <com.example.mykoonba.CircularImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/img_2"
-        android:scaleType="centerCrop"
-        android:layout_gravity="center_horizontal"/>
+    <RelativeLayout
+        android:layout_width="232dp"
+        android:layout_height="232dp"
+        android:layout_gravity="center">
+
+        <com.example.mykoonba.CircularImageView
+            android:id="@+id/fetchImageToadprofilepic"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/profilepicchngebtn"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/camera"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
 
 <!--    Username-->
    <LinearLayout
@@ -67,17 +86,18 @@
          <androidx.cardview.widget.CardView
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:backgroundTint="#00ACC1"
-             app:cardCornerRadius="10dp"
+             android:backgroundTint="#9E039BE5"
+             app:cardCornerRadius="2dp"
              android:layout_marginTop="5dp">
 
              <TextView
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:text="Akash_Karkhal"
+                 android:text="loading..."
                  android:textStyle="bold"
+                 android:id="@+id/fullnamepersonal"
                  android:textColor="@color/white"
-                 android:textSize="20sp"
+                 android:textSize="15sp"
                  android:padding="10dp"/>
 
          </androidx.cardview.widget.CardView>
@@ -102,17 +122,18 @@
            <androidx.cardview.widget.CardView
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:backgroundTint="#00ACC1"
-               app:cardCornerRadius="10dp"
+               android:backgroundTint="#9E039BE5"
+               app:cardCornerRadius="2dp"
                android:layout_marginTop="5dp">
 
                <TextView
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:text="Akashkarkhal@gmail.com"
+                   android:text="loading..."
                    android:textStyle="bold"
+                   android:id="@+id/emailpersonal"
                    android:textColor="@color/white"
-                   android:textSize="20sp"
+                   android:textSize="15sp"
                    android:padding="10dp"/>
 
            </androidx.cardview.widget.CardView>
@@ -137,17 +158,18 @@
            <androidx.cardview.widget.CardView
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:backgroundTint="#00ACC1"
-               app:cardCornerRadius="10dp"
+               android:backgroundTint="#9E039BE5"
+               app:cardCornerRadius="2dp"
                android:layout_marginTop="5dp">
 
                <TextView
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:text="959215461"
+                   android:text="loading..."
                    android:textStyle="bold"
+                   android:id="@+id/phnnumberpersonal"
                    android:textColor="@color/white"
-                   android:textSize="20sp"
+                   android:textSize="15sp"
                    android:padding="10dp"/>
 
            </androidx.cardview.widget.CardView>
@@ -172,17 +194,18 @@
            <androidx.cardview.widget.CardView
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:backgroundTint="#00ACC1"
-               app:cardCornerRadius="10dp"
+               android:backgroundTint="#9E039BE5"
+               app:cardCornerRadius="2dp"
                android:layout_marginTop="5dp">
 
                <TextView
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:text="DOB"
+                   android:text="loading..."
                    android:textStyle="bold"
                    android:textColor="@color/white"
-                   android:textSize="20sp"
+                   android:textSize="15sp"
+                   android:id="@+id/dobpersonal"
                    android:padding="10dp"/>
 
            </androidx.cardview.widget.CardView>
