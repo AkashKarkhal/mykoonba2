@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "288241836108",
+    "project_id": "my-koonba-84523",
+    "storage_bucket": "my-koonba-84523.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288241836108:android:bf95705192304c932e14e9",
+        "android_client_info": {
+          "package_name": "com.example.mykoonba"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpC8_4NJIP6C4tk3jwDGj8ei-g2fH3G5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
