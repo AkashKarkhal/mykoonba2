@@ -3,6 +3,7 @@ package com.example.mykoonba;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -20,7 +21,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                hi
+                Intent i=new Intent(getApplicationContext(), Verification_email_of_signin.class);
+                i.putExtra("mode","login");
+                startActivity(i);
+                finish();
             }
         });
         back.setOnClickListener(new View.OnClickListener() {

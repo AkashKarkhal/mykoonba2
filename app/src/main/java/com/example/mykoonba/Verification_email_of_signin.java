@@ -10,6 +10,7 @@ import android.view.View;
 public class Verification_email_of_signin extends AppCompatActivity {
 
     AppCompatButton Verifybtn,backbtnverification;
+    String mode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +19,8 @@ public class Verification_email_of_signin extends AppCompatActivity {
 
         Verifybtn =  findViewById(R.id.VerifyOtp);
         backbtnverification = findViewById(R.id.Backbtnverification);
-
+        Intent i=getIntent();
+        mode=i.getStringExtra("mode");
 
         backbtnverification.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,10 +32,16 @@ public class Verification_email_of_signin extends AppCompatActivity {
         Verifybtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                finish();
+               if(mode.equals("signin")){
+                   Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                   intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                   startActivity(intent);
+                   finish();
+               }
+               if(mode.equals("login")){
+                   startActivity(new Intent(getApplicationContext(), ResetPassword.class));
+                   finish();
+               }
             }
         });
     }
