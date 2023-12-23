@@ -70,7 +70,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginVertical="10dp">
 
 
                 <TextView
@@ -84,37 +85,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Full Name"
+                    android:id="@+id/signfullname"
                     android:textSize="15sp" />
 
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Username"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Username"
-                    android:textSize="15sp" />
-
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginVertical="10dp">
 
 
                 <TextView
@@ -128,6 +111,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Number"
+                    android:inputType="phone"
+                    android:id="@+id/signphnnumber"
                     android:textSize="15sp" />
 
 
@@ -136,7 +121,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginVertical="10dp">
 
 
                 <TextView
@@ -150,7 +136,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email-id"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:inputType="textEmailAddress"
+                    android:id="@+id/Emailidsignin"/>
 
 
             </LinearLayout>
@@ -158,7 +146,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginVertical="10dp">
 
 
                 <TextView
@@ -172,7 +161,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:inputType="textPassword"
+                    android:id="@+id/passwordsignin"/>
 
 
             </LinearLayout>
@@ -180,7 +171,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginVertical="10dp">
 
 
                 <TextView
@@ -193,8 +185,10 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Confirm Password"
-                    android:textSize="15sp" />
+                    android:hint="Confirm Your Password"
+                    android:textSize="15sp"
+                    android:inputType="textPassword"
+                    android:id="@+id/confirmpasswordsignin"/>
 
 
             </LinearLayout>
@@ -202,7 +196,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginVertical="10dp">
 
 
                 <TextView
@@ -215,7 +210,9 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="DOB"
+                    android:hint="dd/mm/yyy"
+                    android:inputType="date"
+                    android:id="@+id/signdateofbirth"
                     android:textSize="15sp" />
 
 

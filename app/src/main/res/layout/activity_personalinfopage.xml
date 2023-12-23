@@ -35,10 +35,11 @@
 
    </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.example.mykoonba.CircularImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:background="@drawable/man"
+        android:src="@drawable/img_2"
+        android:scaleType="centerCrop"
         android:layout_gravity="center_horizontal"/>
 
 <!--    Username-->
@@ -59,7 +60,7 @@
          <TextView
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:text="Username"
+             android:text="Full Name"
              android:textStyle="bold"
              android:textSize="15sp"/>
 
@@ -73,7 +74,7 @@
              <TextView
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:text="Akash_Karkhak.23"
+                 android:text="Akash_Karkhal"
                  android:textStyle="bold"
                  android:textColor="@color/white"
                  android:textSize="20sp"
@@ -164,7 +165,7 @@
            <TextView
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:text="About"
+               android:text="Date of Birth"
                android:textStyle="bold"
                android:textSize="15sp"/>
 
@@ -178,7 +179,7 @@
                <TextView
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:text="Watcher"
+                   android:text="DOB"
                    android:textStyle="bold"
                    android:textColor="@color/white"
                    android:textSize="20sp"
