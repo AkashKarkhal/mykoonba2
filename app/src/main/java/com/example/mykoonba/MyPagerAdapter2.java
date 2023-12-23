@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 public class MyPagerAdapter2 extends FragmentPagerAdapter {
 
-    private final int NUM_PAGES = 4; // Number of tabs
+    private final int NUM_PAGES = 3; // Number of tabs
 
     public MyPagerAdapter2(FragmentManager fm) {
         super(fm);
@@ -22,8 +22,8 @@ public class MyPagerAdapter2 extends FragmentPagerAdapter {
                 return new onboadringpage2();// Replace with your Fragment class
             case 2:
                 return new onboardpage3();
-            case 3:
-                return new onboarding4();// Replace with your Fragment class
+//            case 3:
+//                return new onboarding4();// Replace with your Fragment class
             default:
                 return null;
         }
@@ -45,8 +45,8 @@ public class MyPagerAdapter2 extends FragmentPagerAdapter {
                 return ".";
             case 2:
                 return ".";
-            case 3:
-                return ".";
+//            case 3:
+//                return ".";
             default:
                 return null;
         }

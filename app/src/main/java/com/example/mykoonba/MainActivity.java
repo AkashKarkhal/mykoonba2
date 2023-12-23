@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         homebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onResume();
+                startActivity(new Intent(getApplicationContext(),chatscreen.class));
             }
         });
 

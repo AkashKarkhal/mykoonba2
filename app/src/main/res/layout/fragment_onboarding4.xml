@@ -12,17 +12,19 @@
         android:layout_height="match_parent">
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:background="@drawable/applogo"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.355" />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:gravity="center_horizontal"
+          android:layout_marginTop="60dp">
+
+
+          <com.example.mykoonba.CircularImageView
+              android:layout_width="250dp"
+              android:layout_height="250dp"
+              android:src="@drawable/mykoonbaoriginallogo"/>
+
+      </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -39,7 +41,7 @@
                 android:text="Login"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="10dp"
-                android:background="#039BE5"
+                android:background="@drawable/mainscreenbuttonlayout"
                 android:id="@+id/loginonboard"/>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -48,7 +50,7 @@
                 android:text="Signin"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="20dp"
-                android:background="#039BE5"
+                android:background="@drawable/mainscreenbuttonlayout"
                 android:id="@+id/signinonboard"/>
 
 

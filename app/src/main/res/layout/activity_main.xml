@@ -95,7 +95,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="10dp"
-                android:background="#039BE5"
+                android:backgroundTint="#039BE5"
+                android:background="@drawable/mainscreenbuttonlayout"
                 android:text="Access Your Traditions\nand\nCelebrate Your Memory"
                 android:textColor="@color/white"
                 android:textSize="18sp">
@@ -155,7 +156,8 @@
                             android:backgroundTint="@color/white"
                             android:text="November 2024"
                             android:textColor="@color/black"
-                            android:textSize="10sp" />
+                            android:textSize="10sp"
+                            android:background="@drawable/mainscreenbuttonlayout"/>
 
                     </LinearLayout>
 
@@ -223,6 +225,7 @@
                                 android:layout_centerInParent="true"
                                 android:backgroundTint="@color/white"
                                 android:text="ADD"
+                                android:background="@drawable/mainscreenbuttonlayout"
                                 android:textColor="@color/black" />
 
                         </RelativeLayout>
@@ -239,6 +242,7 @@
                                 android:layout_centerInParent="true"
                                 android:backgroundTint="@color/white"
                                 android:text="Request"
+                                android:background="@drawable/mainscreenbuttonlayout"
                                 android:textColor="@color/black" />
 
                         </RelativeLayout>
@@ -513,7 +517,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
