@@ -28,12 +28,12 @@
 
     <TextView
         android:id="@+id/onboardnext"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50dp"
         android:background="@drawable/buttonbackground"
         android:gravity="center"
-        android:paddingVertical="10dp"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="30dp"
         android:text="Next"
         android:textColor="@color/white"
         android:textSize="25sp"
