@@ -157,14 +157,26 @@
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:textSize="15sp"
-                    android:inputType="textPassword"
-                    android:id="@+id/passwordsignin"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
 
+                   <EditText
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:hint="Password"
+                       android:textSize="15sp"
+                       android:layout_weight="1"
+                       android:inputType="textPassword"
+                       android:id="@+id/passwordsignin"/>
+
+                   <ImageView
+                       android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:id="@+id/passiconsign" />
+
+
+               </LinearLayout>
 
             </LinearLayout>
 
@@ -182,13 +194,27 @@
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Confirm Your Password"
-                    android:textSize="15sp"
-                    android:inputType="textPassword"
-                    android:id="@+id/confirmpasswordsignin"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <EditText
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:hint="Confirm Your Password"
+                       android:textSize="15sp"
+                       android:inputType="textPassword"
+                       android:layout_weight="1"
+                       android:id="@+id/confirmpasswordsignin"/>
+
+                   <ImageView
+                       android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:id="@+id/confirmpassiconsign" />
+
+
+
+               </LinearLayout>
 
 
             </LinearLayout>

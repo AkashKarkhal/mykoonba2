@@ -6,10 +6,13 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +42,25 @@ public class Loginpage extends AppCompatActivity {
         forgot=findViewById(R.id.forgotpassword);
         signup=findViewById(R.id.textView4);
         back=findViewById(R.id.backloginbtn);
+
+
+        ImageView passiconlogin = findViewById(R.id.passiconlogin);
+        passiconlogin.setImageResource(R.drawable.passhide);
+
+        passiconlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (loginpassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    loginpassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    passiconlogin.setImageResource(R.drawable.passhide);
+
+                }
+                else{
+                    loginpassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    passiconlogin.setImageResource(R.drawable.passshow);
+                }
+            }
+        });
 
 
         signup.setOnClickListener(new View.OnClickListener() {

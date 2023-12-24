@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,6 +46,57 @@ public class Passwordchangepage extends AppCompatActivity {
         newpasschange.setEnabled(false);
         confirmpasschange.setEnabled(false);
         resetbtn.setEnabled(false);
+
+        ImageView currentpassiconchange = findViewById(R.id.currentpassiconpasschange);
+        currentpassiconchange.setImageResource(R.drawable.passhide);
+
+        currentpassiconchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (currentpasschange.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    currentpasschange.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    currentpassiconchange.setImageResource(R.drawable.passhide);
+                }
+                else{
+                    currentpasschange.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    currentpassiconchange.setImageResource(R.drawable.passhide);
+                }
+            }
+        });
+
+        ImageView newPassiconchange = findViewById(R.id.newpassiconchange);
+        newPassiconchange.setImageResource(R.drawable.passhide);
+
+        newPassiconchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (newpasschange.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    newpasschange.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    currentpassiconchange.setImageResource(R.drawable.passhide);
+                }
+                else{
+                    newpasschange.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    currentpassiconchange.setImageResource(R.drawable.passhide);
+                }
+            }
+        });
+
+        ImageView confirmpassiconchange = findViewById(R.id.confirmiconchange);
+        confirmpassiconchange.setImageResource(R.drawable.passhide);
+
+        confirmpassiconchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (confirmpasschange.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    confirmpasschange.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    confirmpassiconchange.setImageResource(R.drawable.passhide);
+                }
+                else{
+                    confirmpasschange.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    confirmpassiconchange.setImageResource(R.drawable.passhide);
+                }
+            }
+        });
 
 
         firebaseUser = firebaseAuth.getCurrentUser();

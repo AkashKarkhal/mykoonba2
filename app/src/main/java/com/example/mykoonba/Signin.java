@@ -7,9 +7,12 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +49,44 @@ public class Signin extends AppCompatActivity {
         signfullname = findViewById(R.id.signfullname);
         signdateofbirth = findViewById(R.id.signdateofbirth);
         signphnnumber = findViewById(R.id.signphnnumber);
+
+
+        ImageView passiconsign = findViewById(R.id.passiconsign);
+        passiconsign.setImageResource(R.drawable.passhide);
+        passiconsign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (signpass.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    signpass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    passiconsign.setImageResource(R.drawable.passhide);
+
+                }
+                else{
+                    signpass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    passiconsign.setImageResource(R.drawable.passshow);
+                }
+            }
+        });
+
+       ImageView  confirmpassiconsignin = findViewById(R.id.confirmpassiconsign);
+       confirmpassiconsignin.setImageResource(R.drawable.passhide);
+
+       confirmpassiconsignin.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               if (signconfrimpass.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                   signconfrimpass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                   confirmpassiconsignin.setImageResource(R.drawable.passhide);
+               }
+               else{
+                   signconfrimpass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                   confirmpassiconsignin.setImageResource(R.drawable.passshow);
+               }
+           }
+       });
+
+
+
 
 
 
