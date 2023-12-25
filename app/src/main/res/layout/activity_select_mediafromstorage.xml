@@ -17,14 +17,11 @@
         android:layout_marginBottom="5dp"
         android:background="@drawable/backward" />
 
-
-
-
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="2) Catagory: Festivals"
+            android:layout_below="@+id/Backward"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -34,11 +31,16 @@
 
     <EditText
         android:id="@+id/AddTitletext"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/CatagoryType"
-        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
         android:hint="Add Title" />
 
     <androidx.appcompat.widget.AppCompatButton
