@@ -70,6 +70,21 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!--preserve tradition-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/CelebrateBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:backgroundTint="#039BE5"
+                android:background="@drawable/mainscreenbuttonlayout"
+                android:text="Access Your Traditions\nand\nCelebrate Your Memory"
+                android:textColor="@color/white"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -89,19 +104,6 @@
             </RelativeLayout>
 
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/CelebrateBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="10dp"
-                android:backgroundTint="#039BE5"
-                android:background="@drawable/mainscreenbuttonlayout"
-                android:text="Access Your Traditions\nand\nCelebrate Your Memory"
-                android:textColor="@color/white"
-                android:textSize="18sp">
-
-            </androidx.appcompat.widget.AppCompatButton>
 
             <LinearLayout
                 android:layout_width="match_parent"
