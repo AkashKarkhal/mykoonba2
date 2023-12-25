@@ -1,9 +1,11 @@
 package com.example.mykoonba;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,6 +38,16 @@ public class AdapterGroupList extends RecyclerView.Adapter<AdapterGroupList.View
 
         //holder.dp.setImageURI(arrayList.get(position).image);
         holder.name.setText(arrayList.get(position).name);
+        holder.item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String heading =arrayList.get(holder.getAdapterPosition()).name.toString();
+                Intent i=new Intent(context, chatscreen.class);
+                i.putExtra("heading",heading);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -47,10 +59,12 @@ public class AdapterGroupList extends RecyclerView.Adapter<AdapterGroupList.View
 
         TextView name;
         CircularImageView dp;
+        LinearLayout item;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name=itemView.findViewById(R.id.contact_name_recycler_item);
             dp=itemView.findViewById(R.id.contect_dp_recycler_item);
+            item=itemView.findViewById(R.id.item_contact_linear_layout_for_contact);
 
 
         }
