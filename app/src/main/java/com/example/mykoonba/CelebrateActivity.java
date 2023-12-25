@@ -9,6 +9,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +21,8 @@ import java.util.Set;
 
 public class CelebrateActivity extends AppCompatActivity {
 
+    AppCompatButton backbtn;
+
     TextView more;
     FrameLayout frame;
     ArrayList<String> datesList=new ArrayList<>();
@@ -30,6 +33,14 @@ public class CelebrateActivity extends AppCompatActivity {
         setContentView(R.layout.celibrate_activity_layout);
         more=findViewById(R.id.more);
         frame=findViewById(R.id.frameCont);
+        backbtn = findViewById(R.id.backbtncelebrate);
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         int id1=R.id.menu_item_bydate;
         int id2=R.id.menu_item_bymedia;

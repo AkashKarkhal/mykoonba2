@@ -11,6 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/backward"
+            android:id="@+id/backbtncelebrate"/>
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
