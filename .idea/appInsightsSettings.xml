@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.mykoonba" />
+                  <option name="mobileSdkAppId" value="1:288241836108:android:bf95705192304c932e14e9" />
+                  <option name="projectId" value="my-koonba-84523" />
+                  <option name="projectNumber" value="288241836108" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

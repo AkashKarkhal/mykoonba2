@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -19,13 +20,15 @@ public class chatscreen extends AppCompatActivity {
     CircularImageView chatgrpdp;
     EditText chatmsg;
     RecyclerView chatrecylerview;
+    String heading;
     ArrayList<chatmodel> arrayList=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatscreen);
-
+        Intent i= getIntent();
+        heading=i.getStringExtra("heading");
 
        grpnamechat = findViewById(R.id.chatscreenheading);
        chatdot =  findViewById(R.id.chatscreendot);
@@ -35,6 +38,7 @@ public class chatscreen extends AppCompatActivity {
        chatmsg = findViewById(R.id.chatscreenedittext);
        chatrecylerview = findViewById(R.id.chatscreenecyclerview);
 
+       grpnamechat.setText(heading);
 
        chatrecylerview.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
@@ -52,7 +56,9 @@ public class chatscreen extends AppCompatActivity {
                 arrayList.add(new chatmodel(chat,1));
                 ChatscreenAdapter adapter=new ChatscreenAdapter(getApplicationContext(),arrayList);
                 chatrecylerview.setAdapter(adapter);
-
+                chatrecylerview.scrollToPosition(arrayList.size()-1);
+                chatmsg.clearFocus();
+                chatmsg.setText("");
             }
         });
        chatback.setOnClickListener(new View.OnClickListener() {
