@@ -24,50 +24,16 @@ public class SelectCatagory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_catagory);
         catagorylistview = findViewById(R.id.Catagorylistview);
-        catogarylist.add("Festival");
-        catogarylist.add("Wedding");
+        catogarylist.add("Celebration and Enjoyment");
+        catogarylist.add("Food and Drinks");
+        catogarylist.add("Fashion and Style");
+        catogarylist.add("Festivals");
+        catogarylist.add("Family Events");
+        catogarylist.add("Travel and Adventure");
+        catogarylist.add("Nature and Outdoors");
+        catogarylist.add("Work and Business");
+        catogarylist.add("Pets and Animals");
         catogarylist.add("Sports and Fitness");
-        catogarylist.add("Travel and Places");
-        catogarylist.add("Nature");
-        catogarylist.add("Health");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
-        catogarylist.add("Fashion");
 
         ArrayAdapter adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,catogarylist);
        catagorylistview.setAdapter(adapter);
@@ -75,7 +41,9 @@ public class SelectCatagory extends AppCompatActivity {
        catagorylistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-               startActivity(new Intent(getApplicationContext(), SelectMediafromstorage.class));
+               Intent intent=new Intent(getApplicationContext(), SelectMediafromstorage.class);
+               intent.putExtra("catagory",catogarylist.get(i).toString());
+               startActivity(intent);
            }
        });
 

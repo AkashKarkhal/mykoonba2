@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class dsucessmedia extends AppCompatActivity {
 
@@ -30,10 +31,15 @@ public class dsucessmedia extends AppCompatActivity {
         ShareWithKoonbaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(new Intent(dsucessmedia.this, Groupspage.class));
-                i.putExtra("mode","add");
-                startActivity(i);
-                finish();
+               if(new groupdata().getArrayList().isEmpty()){
+                   Toast.makeText(dsucessmedia.this, "No Groups Available to Add", Toast.LENGTH_SHORT).show();
+               }
+               else {
+                   Intent i = new Intent(new Intent(dsucessmedia.this, Groupspage.class));
+                   i.putExtra("mode", "add");
+                   startActivity(i);
+                   finish();
+               }
             }
         });
     }
