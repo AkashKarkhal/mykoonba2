@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class addgrouppage extends AppCompatActivity {
 
     AppCompatButton back,addBtn,addPic;
-    EditText name,bio;
+    EditText name;
     Uri ImageUri;
     CircularImageView image;
     @Override
@@ -25,7 +25,6 @@ public class addgrouppage extends AppCompatActivity {
         back=findViewById(R.id.backButtonAddGroup);
         addBtn=findViewById(R.id.CreateButtonwhilecreatinggroup);
         name=findViewById(R.id.NameofKoonbawhileCreatinggroup);
-        bio=findViewById(R.id.KoonbaAboutwhilecreatinggroup);
         image=findViewById(R.id.fetchImageToaddGroup);
         addPic=findViewById(R.id.addImageBtn);
 

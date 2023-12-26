@@ -1,5 +1,6 @@
 package com.example.mykoonba;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.AppCompatButton;
@@ -59,7 +60,6 @@ public class FragmentGroupList extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,7 +68,21 @@ public class FragmentGroupList extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         AdapterGroupList adapter=new AdapterGroupList(getContext());
         recyclerView.setAdapter(adapter);
+
+        addgrp=view.findViewById(R.id.Addnewgrp);
+        addgrp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), addgrouppage.class));
+            }
+        });
         // Inflate the layout for this fragment
         return view;
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        AdapterGroupList adapter=new AdapterGroupList(getContext());
+        recyclerView.setAdapter(adapter);
     }
 }
