@@ -2,8 +2,12 @@ package com.example.mykoonba;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,13 +17,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SelectMediafromstorage extends AppCompatActivity {
     AppCompatButton backward, SubmitBtn, Addmediabtn;
-    ImageView imageFetch;
+    //ImageView imageFetch;
     Uri ImageUri;
+    RecyclerView recyclerView;
     String catagory;
     TextView catagoryTxt;
     EditText title;
+    ArrayList<Uri> imageUris;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -28,17 +37,24 @@ public class SelectMediafromstorage extends AppCompatActivity {
         setContentView(R.layout.activity_select_mediafromstorage);
 
         SubmitBtn = findViewById(R.id.SubmitBtn);
-        backward = findViewById(R.id.Backkk);
+        backward = findViewById(R.id.Backward);
         Addmediabtn = findViewById(R.id.AddMediaBtn);
-        imageFetch=findViewById(R.id.imageFetch);
+        //imageFetch=findViewById(R.id.imageFetch);
         catagoryTxt=findViewById(R.id.CatagoryType);
         title=findViewById(R.id.AddTitletext);
+
+        SubmitBtn.setEnabled(false);
+        imageUris = new ArrayList<>();
+
+        recyclerView=findViewById(R.id.RecyclerViewFetchMedia);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),3));
 
         Intent i=getIntent();
         catagoryTxt.setText("Catagory: "+i.getStringExtra("catagory"));
 
-        imageFetch.setVisibility(View.GONE);
-        SubmitBtn.setEnabled(false);
+        //imageFetch.setVisibility(View.GONE);
+
 
         Addmediabtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,8 +64,10 @@ public class SelectMediafromstorage extends AppCompatActivity {
                    title.requestFocus();
                }
                else {
-                   Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                   startActivityForResult(intent, 444);
+                   Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                   intent.setType("image/*");
+                   intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                   startActivityForResult(Intent.createChooser(intent, "Select Picture"), 444);
                }
             }
         });
@@ -62,6 +80,12 @@ public class SelectMediafromstorage extends AppCompatActivity {
                 finish();
             }
         });
+        backward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
     }
@@ -70,10 +94,29 @@ public class SelectMediafromstorage extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK) {
-            ImageUri = data.getData();
-            imageFetch.setImageURI(ImageUri);
-            imageFetch.setVisibility(View.VISIBLE);
+//            ImageUri = data.getData();
+//            imageFetch.setImageURI(ImageUri);
+            //imageFetch.setVisibility(View.VISIBLE);
             SubmitBtn.setEnabled(true);
+
+
+            if (data != null) {
+                // Check if multiple images are selected
+                if (data.getClipData() != null) {
+                    imageUris=new ArrayList<>();
+                    ClipData clipData = data.getClipData();
+                    for (int i = 0; i < clipData.getItemCount(); i++) {
+                        Uri uri = clipData.getItemAt(i).getUri();
+                        imageUris.add(uri);
+                    }
+                    AdapterFetchMedia adapterFetchMedia=new AdapterFetchMedia(getApplicationContext(),imageUris);
+                    recyclerView.setAdapter(adapterFetchMedia);
+                } else if (data.getData() != null) {
+                    // Single image selected
+                    Uri uri = data.getData();
+                    imageUris.add(uri);
+                }
+            }
         }
 
     }
