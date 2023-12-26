@@ -178,4 +178,5 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,eventList);
         listView.setAdapter(adapter);
     }
+
 }

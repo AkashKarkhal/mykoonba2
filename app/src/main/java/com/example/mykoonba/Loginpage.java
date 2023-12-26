@@ -1,6 +1,7 @@
 package com.example.mykoonba;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
@@ -16,21 +17,32 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Loginpage extends AppCompatActivity {
 
     private EditText loginemail,loginpassword;
     private AppCompatButton loginbtn;
     FirebaseAuth auth;
-
-    AppCompatButton back;
+    FirebaseUser firebaseUser;
+    AppCompatButton back,google,facebook;
     TextView forgot,signup;
+
+
+
+
+
 
 
     @Override
@@ -42,6 +54,12 @@ public class Loginpage extends AppCompatActivity {
         forgot=findViewById(R.id.forgotpassword);
         signup=findViewById(R.id.textView4);
         back=findViewById(R.id.backloginbtn);
+        google = findViewById(R.id.Google);
+
+
+
+
+
 
 
         ImageView passiconlogin = findViewById(R.id.passiconlogin);
@@ -130,4 +148,11 @@ public class Loginpage extends AppCompatActivity {
             }
         });
     }
-}
+
+
+    }
+
+
+
+
+

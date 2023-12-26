@@ -2,6 +2,7 @@ package com.example.mykoonba;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
  */
 public class FragmentGroupList extends Fragment {
     RecyclerView recyclerView;
+    AppCompatButton addgrp;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

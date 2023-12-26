@@ -10,6 +10,7 @@ import com.google.android.material.tabs.TabLayout;
 public class NetworkTabActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,10 @@ public class NetworkTabActivity extends AppCompatActivity {
         MyPagerAdapter3 adapter=new MyPagerAdapter3(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+
+
+
+
 
     }
 }
