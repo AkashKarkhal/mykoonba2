@@ -36,6 +36,7 @@ public class addgrouppage extends AppCompatActivity {
 
                 ArrayList<networklistDataModel> arrayList = new  groupdata().getArrayList();
                 arrayList.add(new networklistDataModel(ImageUri,namek));
+                startActivity(new Intent(getApplicationContext(),ContactSelectionActivity.class));
                 finish();
             }
         });
