@@ -26,9 +26,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class Loginpage extends AppCompatActivity {
 
@@ -39,10 +44,10 @@ public class Loginpage extends AppCompatActivity {
     AppCompatButton back,google,facebook;
     TextView forgot,signup;
 
-
-
-
-
+    AppCompatButton googlelogin;
+    FirebaseDatabase database;
+    GoogleSignInClient gcs;
+    int RC_SIGN_IN = 20;
 
 
     @Override
@@ -54,8 +59,27 @@ public class Loginpage extends AppCompatActivity {
         forgot=findViewById(R.id.forgotpassword);
         signup=findViewById(R.id.textView4);
         back=findViewById(R.id.backloginbtn);
-        google = findViewById(R.id.Google);
+        googlelogin = findViewById(R.id.logingooglebtn);
 
+       auth = FirebaseAuth.getInstance();
+       database = FirebaseDatabase.getInstance();
+
+       GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+               .requestIdToken(getString(R.string.default_web_client_id))
+               .requestEmail()
+               .build();
+
+       gcs = GoogleSignIn.getClient(this,gso);
+
+
+       googlelogin.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+
+               googleSignin();
+
+           }
+       });
 
 
 
@@ -149,8 +173,68 @@ public class Loginpage extends AppCompatActivity {
         });
     }
 
+    private void googleSignin() {
+
+
+        Intent intent = gcs.getSignInIntent();
+        startActivityForResult(intent,RC_SIGN_IN);
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+        if (requestCode==RC_SIGN_IN){
+
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+
+            try {
+
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                firebseauth(account.getIdToken());
+
+            }
+            catch (Exception e){
+                Toast.makeText(this,e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void firebseauth(String idToken) {
+
+
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken,null);
+
+        auth.signInWithCredential(credential)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if (task.isSuccessful()){
+                            FirebaseUser user = auth.getCurrentUser();
+
+                            HashMap<String , Object> map = new HashMap<>();
+                            map.put("id",user.getUid());
+                            map.put("name",user.getDisplayName());
+                            map.put("Profile",user.getPhotoUrl().toString());
+
+
+                            database.getReference().child("users").child(user.getUid()).setValue(map);
+
+                            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                            startActivity(intent);
+                        }
+                        else {
+
+                            Toast.makeText(Loginpage.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+    }
+}
 
 
 

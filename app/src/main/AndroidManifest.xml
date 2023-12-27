@@ -16,6 +16,12 @@
         android:theme="@style/Theme.MyKoonba"
         tools:targetApi="31">
         <activity
+            android:name=".otpmanage"
+            android:exported="false" />
+        <activity
+            android:name=".otprecieved"
+            android:exported="false" />
+        <activity
             android:name=".phonenumber"
             android:exported="false" />
         <activity
