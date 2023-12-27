@@ -38,16 +38,16 @@ public class AdapterGroupList extends RecyclerView.Adapter<AdapterGroupList.View
 
         //holder.dp.setImageURI(arrayList.get(position).image);
         holder.name.setText(arrayList.get(position).name);
-        holder.item.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String heading =arrayList.get(holder.getAdapterPosition()).name.toString();
-                Intent i=new Intent(context, chatscreen.class);
-                i.putExtra("heading",heading);
-                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(i);
-            }
-        });
+//        holder.item.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String heading =arrayList.get(holder.getAdapterPosition()).name.toString();
+//                Intent i=new Intent(context, chatscreen.class);
+//                i.putExtra("heading",heading);
+//                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                context.startActivity(i);
+//            }
+//        });
     }
 
     @Override

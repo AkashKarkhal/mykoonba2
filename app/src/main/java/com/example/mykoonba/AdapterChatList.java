@@ -13,41 +13,38 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapterContactList extends RecyclerView.Adapter<AdapterContactList.ViewHolder> {
+public class AdapterChatList extends RecyclerView.Adapter<AdapterChatList.ViewHolder> {
 
     Context context;
     ArrayList<DataModelContactList> arrayList;
-
-    AdapterContactList(Context context){
+    AdapterChatList(Context context){
         this.context=context;
         getListData();
     }
 
-
-
     @NonNull
     @Override
-    public AdapterContactList.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-       View view= LayoutInflater.from(context).inflate(R.layout.contact_list_item_layout,parent,false);
+    public AdapterChatList.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(context).inflate(R.layout.contact_list_item_layout,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterContactList.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterChatList.ViewHolder holder, int position) {
 
         holder.dp.setImageResource(arrayList.get(position).image);
         holder.name.setText(arrayList.get(position).name);
 
-//        holder.item.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String heading =arrayList.get(holder.getAdapterPosition()).name.toString();
-//                Intent i=new Intent(context, chatscreen.class);
-//                i.putExtra("heading",heading);
-//                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                context.startActivity(i);
-//            }
-//        });
+        holder.item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String heading =arrayList.get(holder.getAdapterPosition()).name.toString();
+                Intent i=new Intent(context, chatscreen.class);
+                i.putExtra("heading",heading);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -81,20 +78,8 @@ public class AdapterContactList extends RecyclerView.Adapter<AdapterContactList.
         arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur"));
         arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh"));
         arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal"));
+
+
 
 
     }
