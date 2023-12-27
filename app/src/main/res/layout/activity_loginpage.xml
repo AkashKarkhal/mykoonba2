@@ -155,22 +155,22 @@
         android:layout_marginVertical="30dp"
         app:layout_constraintBottom_toTopOf="@+id/textView4">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="20dp"
-            android:gravity="center"
-            android:text="Log in with Google"
-            android:textColor="@color/white" />
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginVertical="20dp"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Log in with Google"-->
+<!--            android:textColor="@color/white" />-->
 
-<androidx.appcompat.widget.AppCompatButton
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Log in with Google"
-    android:layout_marginHorizontal="25dp"
-    android:backgroundTint="#039BE5"
-    android:textColor="@color/white"
-    android:id="@+id/logingooglebtn"/>
+<!--<androidx.appcompat.widget.AppCompatButton-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:text="Log in with Google"-->
+<!--    android:layout_marginHorizontal="25dp"-->
+<!--    android:backgroundTint="#039BE5"-->
+<!--    android:textColor="@color/white"-->
+<!--    android:id="@+id/logingooglebtn"/>-->
 <!--        <RelativeLayout-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="wrap_content"-->
