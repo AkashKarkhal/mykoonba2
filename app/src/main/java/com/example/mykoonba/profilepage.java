@@ -26,9 +26,10 @@ public class profilepage extends AppCompatActivity {
 
     LinearLayout personalinfolayout,passwordlayout,invitemsglayout;
 
-    TextView fullname,mail;
+    TextView fullname,mail,logout;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,19 @@ public class profilepage extends AppCompatActivity {
         fullname=findViewById(R.id.fullnameprofilepage);
         mail=findViewById(R.id.usernameprofilepage);
         backbtn = findViewById(R.id.backbtnprofilepage);
+        logout = findViewById(R.id.logout);
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), LoginSignupActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                Toast.makeText(profilepage.this, "You are Log out from My Koonba", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override

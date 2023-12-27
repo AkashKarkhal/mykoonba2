@@ -55,16 +55,13 @@ public class chatscreen extends AppCompatActivity {
 
                dialog.setContentView(R.layout.dialogdesign);
                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+               TextView nameindialogbox = dialog.findViewById(R.id.nameindialobox);
+               nameindialogbox.setText(heading);
                dialog.show();
 
 
            }
        });
-
-
-
-
-
 
 
        grpnamechat.setText(heading);
