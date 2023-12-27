@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".upcomingeventlayout">
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="23dp"
+        android:background="@drawable/backward"
+        app:layout_constraintBottom_toTopOf="@+id/AddEventname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/backbtnupcoming"/>
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"

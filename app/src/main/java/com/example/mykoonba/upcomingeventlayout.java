@@ -13,6 +13,7 @@ public class upcomingeventlayout extends AppCompatActivity {
     EditText addeventname;
     DatePicker datepicker;
     int day,month,year;
+    AppCompatButton backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,14 @@ public class upcomingeventlayout extends AppCompatActivity {
         AppCompatButton done=findViewById(R.id.Addupeventbtn);
         addeventname = findViewById(R.id.AddEventname);
         datepicker = findViewById(R.id.Addeventdatepicker);
+        backbtn = findViewById(R.id.backbtnupcoming);
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         day=datepicker.getDayOfMonth();
         month= datepicker.getMonth()+1;
