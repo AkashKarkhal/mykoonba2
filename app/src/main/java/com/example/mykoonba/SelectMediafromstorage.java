@@ -98,24 +98,22 @@ public class SelectMediafromstorage extends AppCompatActivity {
 //            imageFetch.setImageURI(ImageUri);
             //imageFetch.setVisibility(View.VISIBLE);
             SubmitBtn.setEnabled(true);
-
-
             if (data != null) {
+                imageUris.clear();
                 // Check if multiple images are selected
                 if (data.getClipData() != null) {
-                    imageUris=new ArrayList<>();
                     ClipData clipData = data.getClipData();
                     for (int i = 0; i < clipData.getItemCount(); i++) {
                         Uri uri = clipData.getItemAt(i).getUri();
                         imageUris.add(uri);
                     }
-                    AdapterFetchMedia adapterFetchMedia=new AdapterFetchMedia(getApplicationContext(),imageUris);
-                    recyclerView.setAdapter(adapterFetchMedia);
                 } else if (data.getData() != null) {
                     // Single image selected
                     Uri uri = data.getData();
                     imageUris.add(uri);
                 }
+                AdapterFetchMedia adapterFetchMedia=new AdapterFetchMedia(getApplicationContext(),imageUris);
+                recyclerView.setAdapter(adapterFetchMedia);
             }
         }
 
