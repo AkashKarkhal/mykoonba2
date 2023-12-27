@@ -26,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
     AppCompatButton CelebrateBtn,ADDBtn,rqst,plusbtn,addEventBtn,UserBtn,groupbtn,notibtn;
 
-    AppCompatButton Addgourpbtn,addeventbtn,homebtn;
+    AppCompatButton Addgourpbtn,addeventbtn,homebtn,myContribition,chatButton;
+
+
 
     ImageSlider imageSlider;
     ListView listView;
@@ -55,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         notibtn = findViewById(R.id.notibtn);
         addeventbtn = findViewById(R.id.AddEventbtn);
         homebtn = findViewById(R.id.Homemain);
+        chatButton=findViewById(R.id.chatButton);
+
+        myContribition=findViewById(R.id.ButonMyContribition);
 
         homebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +85,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        myContribition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),MyContribition.class));
+            }
+        });
+        chatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ChatListActivity.class));
+            }
+        });
 
 
 //

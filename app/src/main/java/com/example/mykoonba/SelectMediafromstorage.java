@@ -116,6 +116,5 @@ public class SelectMediafromstorage extends AppCompatActivity {
                 recyclerView.setAdapter(adapterFetchMedia);
             }
         }
-
     }
 }

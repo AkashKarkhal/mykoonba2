@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".celebrateactivity"
+    tools:context=".MainActivity"
     android:background="@drawable/mainactivityback">
 
     <ScrollView
@@ -630,6 +630,7 @@
                     android:layout_gravity="center">
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/ButonMyContribition"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
@@ -669,6 +670,7 @@
 
                     <androidx.appcompat.widget.AppCompatButton
 
+                        android:id="@+id/chatButton"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
