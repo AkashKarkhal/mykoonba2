@@ -160,41 +160,49 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
             android:gravity="center"
-            android:text="login using following option"
+            android:text="Log in with Google"
             android:textColor="@color/white" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+<androidx.appcompat.widget.AppCompatButton
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Log in with Google"
+    android:layout_marginHorizontal="25dp"
+    android:backgroundTint="#039BE5"
+    android:textColor="@color/white"
+    android:id="@+id/logingooglebtn"/>
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginVertical="10dp">-->
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerInParent="true">-->
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginHorizontal="15dp"
-                    android:id="@+id/Google"
-                    android:background="@drawable/search" />
+<!--                <androidx.appcompat.widget.AppCompatButton-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:layout_marginHorizontal="15dp"-->
+<!--                    android:id="@+id/Google"-->
+<!--                    android:background="@drawable/search" />-->
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginHorizontal="15dp"
-                    android:background="@drawable/facebook"
-                    android:id="@+id/Facebook"/>
+<!--                <androidx.appcompat.widget.AppCompatButton-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:layout_marginHorizontal="15dp"-->
+<!--                    android:background="@drawable/facebook"-->
+<!--                    android:id="@+id/Facebook"/>-->
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginHorizontal="15dp"
-                    android:background="@drawable/linkedin" />
-            </LinearLayout>
+<!--                <androidx.appcompat.widget.AppCompatButton-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:layout_marginHorizontal="15dp"-->
+<!--                    android:background="@drawable/linkedin" />-->
+<!--            </LinearLayout>-->
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
 
     </LinearLayout>
 
