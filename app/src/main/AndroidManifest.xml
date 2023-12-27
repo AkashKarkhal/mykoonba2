@@ -16,6 +16,9 @@
         android:theme="@style/Theme.MyKoonba"
         tools:targetApi="31">
         <activity
+            android:name=".phonenumber"
+            android:exported="false" />
+        <activity
             android:name=".ContactSelectionActivity"
             android:exported="false" />
         <activity

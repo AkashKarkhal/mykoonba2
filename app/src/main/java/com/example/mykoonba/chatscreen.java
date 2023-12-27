@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -53,12 +54,17 @@ public class chatscreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String chat=chatmsg.getText().toString();
-                arrayList.add(new chatmodel(chat,1));
-                ChatscreenAdapter adapter=new ChatscreenAdapter(getApplicationContext(),arrayList);
-                chatrecylerview.setAdapter(adapter);
-                chatrecylerview.scrollToPosition(arrayList.size()-1);
-                chatmsg.clearFocus();
-                chatmsg.setText("");
+              if (!chatmsg.getText().toString().equals("")){
+                  arrayList.add(new chatmodel(chat,1));
+                  ChatscreenAdapter adapter=new ChatscreenAdapter(getApplicationContext(),arrayList);
+                  chatrecylerview.setAdapter(adapter);
+                  chatrecylerview.scrollToPosition(arrayList.size()-1);
+                  chatmsg.clearFocus();
+                  chatmsg.setText("");
+              }
+              else{
+                  Toast.makeText(chatscreen.this, "Can't Send Empty Message", Toast.LENGTH_SHORT).show();
+              }
             }
         });
        chatback.setOnClickListener(new View.OnClickListener() {

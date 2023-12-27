@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         imageSlider = findViewById(R.id.image_slider);
         listView=findViewById(R.id.listEvents);
         UserBtn = findViewById(R.id.Userbtn);
-        Addgourpbtn = findViewById(R.id.AddGroup);
+
         notibtn = findViewById(R.id.notibtn);
         addeventbtn = findViewById(R.id.AddEventbtn);
         homebtn = findViewById(R.id.Homemain);
@@ -79,12 +80,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Addgourpbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), addgrouppage.class));
-            }
-        });
+
 
 //
 
@@ -115,7 +111,29 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
 
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int i, long l) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Remove the item from the list
+                        eventList.remove(i);
+
+                        ArrayAdapter adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,eventList);
+                        listView.setAdapter(adapter);
+
+
+                    }
+                });
+                return true;
+            }
+        });
+
+
         imageSlider.setImageList(slideModels);
+
+
 
 
 

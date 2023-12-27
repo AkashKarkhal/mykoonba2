@@ -64,6 +64,7 @@
             android:layout_below="@id/tradtion"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="40dp"
             android:background="#039BE5"
             android:text="Share With Your Koonba"
             android:textSize="20sp"

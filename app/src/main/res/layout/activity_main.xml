@@ -117,7 +117,7 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="170dp"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:background="@drawable/img" />
 
             </LinearLayout>
@@ -504,7 +504,7 @@
 
 
                 <EditText
-                    android:layout_width="250dp"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#EFE9E9"
                     android:textSize="15sp"
@@ -528,7 +528,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -541,19 +540,18 @@
             android:paddingVertical="1dp">
 
 
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="5dp"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_gravity="center">
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -572,28 +570,27 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Home"
-                    android:visibility="gone"
                     android:textColor="@color/white"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:visibility="gone" />
 
 
             </LinearLayout>
 
 
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="5dp"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
 
-                android:layout_weight="1">
+                android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_gravity="center">
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -612,31 +609,33 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Notification"
-                    android:visibility="gone"
                     android:textColor="@color/white"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:visibility="gone" />
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="5dp"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_gravity="center">
 
                     <androidx.appcompat.widget.AppCompatButton
-
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
-                        android:background="@drawable/addgroup" />
+                        android:background="@drawable/gg"
+                        android:backgroundTint="@color/white" />
+
 
                 </RelativeLayout>
 
@@ -648,23 +647,24 @@
                     android:text="ADD"
                     android:textColor="@color/white"
                     android:textSize="10sp"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="5dp"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
 
-                android:layout_weight="1">
+                android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_gravity="center">
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -672,7 +672,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
-
+                        android:background="@drawable/email"
                         android:backgroundTint="@color/white" />
 
                 </RelativeLayout>
@@ -683,9 +683,9 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Add Event"
-                    android:visibility="gone"
                     android:textColor="@color/white"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:visibility="gone" />
 
 
             </LinearLayout>
@@ -693,16 +693,16 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="5dp"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
 
-                android:layout_weight="1">
+                android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_gravity="center">
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -721,9 +721,9 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Profile"
-                    android:visibility="gone"
                     android:textColor="@color/white"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:visibility="gone" />
 
 
             </LinearLayout>
@@ -732,45 +732,6 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="5dp"
-        android:layout_marginBottom="681dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/relativeLayout2">
 
-        <RelativeLayout
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center">
-
-            <androidx.appcompat.widget.AppCompatButton
-
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:background="@drawable/addgroup"
-                android:id="@+id/AddGroup"/>
-
-        </RelativeLayout>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="ADD"
-            android:textColor="@color/white"
-            android:textSize="10sp"
-            android:visibility="gone" />
-
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
