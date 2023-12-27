@@ -49,9 +49,10 @@
             android:layout_gravity="center_vertical"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/dots"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/insaan"
+            android:layout_gravity="center_vertical"
             android:id="@+id/chatscreendot"/>
 
 

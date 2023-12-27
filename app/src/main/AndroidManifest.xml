@@ -16,6 +16,9 @@
         android:theme="@style/Theme.MyKoonba"
         tools:targetApi="31">
         <activity
+            android:name=".profileinfoofchatperson"
+            android:exported="false" />
+        <activity
             android:name=".ChatListActivity"
             android:exported="false" />
         <activity

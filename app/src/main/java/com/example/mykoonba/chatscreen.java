@@ -5,7 +5,10 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -22,7 +25,11 @@ public class chatscreen extends AppCompatActivity {
     EditText chatmsg;
     RecyclerView chatrecylerview;
     String heading;
+    AppCompatButton chatscreendot;
     ArrayList<chatmodel> arrayList=new ArrayList<>();
+
+    Dialog dialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,27 @@ public class chatscreen extends AppCompatActivity {
        chatgrpdp = findViewById(R.id.chatscreendp);
        chatmsg = findViewById(R.id.chatscreenedittext);
        chatrecylerview = findViewById(R.id.chatscreenecyclerview);
+
+       chatscreendot = findViewById(R.id.chatscreendot);
+       dialog = new Dialog(this);
+
+       chatscreendot.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+
+               dialog.setContentView(R.layout.dialogdesign);
+               dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+               dialog.show();
+
+
+           }
+       });
+
+
+
+
+
+
 
        grpnamechat.setText(heading);
 
