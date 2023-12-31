@@ -71,30 +71,30 @@ public class AdapterContactList extends RecyclerView.Adapter<AdapterContactList.
 
     void getListData() {
         arrayList=new ArrayList<>();
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal","contact"));
 
 
     }
