@@ -41,6 +41,7 @@ public class AdapterChatList extends RecyclerView.Adapter<AdapterChatList.ViewHo
                 String heading =arrayList.get(holder.getAdapterPosition()).name.toString();
                 Intent i=new Intent(context, chatscreen.class);
                 i.putExtra("heading",heading);
+                i.putExtra("mode",arrayList.get(holder.getAdapterPosition()).mode.toString());
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
             }
@@ -68,19 +69,15 @@ public class AdapterChatList extends RecyclerView.Adapter<AdapterChatList.ViewHo
 
     void getListData() {
         arrayList=new ArrayList<>();
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep kaur"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh"));
-        arrayList.add(new DataModelContactList(R.drawable.img_1,"Mohit Sharma"));
-
-
-
-
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Ramandeep Group","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"B.tech cse 2021","group"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Rakesh kumar","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Jyoti koshal","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Akashdeep Singh","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Hostel staf group","group"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"Manjinder Singh","contact"));
+        arrayList.add(new DataModelContactList(R.drawable.img_1,"yarra naal baharan","group"));
     }
 }
