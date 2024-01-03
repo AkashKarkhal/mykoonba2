@@ -16,6 +16,9 @@
         android:theme="@style/Theme.MyKoonba"
         tools:targetApi="31">
         <activity
+            android:name=".SliderEventsActivity"
+            android:exported="false" />
+        <activity
             android:name=".PandC"
             android:exported="false" />
         <activity

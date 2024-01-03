@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.interfaces.ItemClickListener;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.slider.Slider;
 
@@ -157,6 +158,20 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        imageSlider.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemSelected(int i) {
+
+                Intent intent=new Intent(getApplicationContext(), SliderEventsActivity.class);
+                intent.putExtra("pos",i);
+                startActivity(intent);
+            }
+
+            @Override
+            public void doubleClick(int i) {
+
+            }
+        });
 
 
 
