@@ -16,6 +16,21 @@
         android:theme="@style/Theme.MyKoonba"
         tools:targetApi="31">
         <activity
+            android:name=".PandC"
+            android:exported="false" />
+        <activity
+            android:name=".TandC"
+            android:exported="false" />
+        <activity
+            android:name=".Contactpage"
+            android:exported="false" />
+        <activity
+            android:name=".Aboutpage"
+            android:exported="false" />
+        <activity
+            android:name=".FAQS"
+            android:exported="false" />
+        <activity
             android:name=".profileinfoofchatperson"
             android:exported="false" />
         <activity

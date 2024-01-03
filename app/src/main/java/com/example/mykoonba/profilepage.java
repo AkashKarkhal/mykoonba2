@@ -29,6 +29,7 @@ public class profilepage extends AppCompatActivity {
     TextView fullname,mail,logout;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
+    TextView faq,about,contact,tnc,pnc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,54 @@ public class profilepage extends AppCompatActivity {
         mail=findViewById(R.id.usernameprofilepage);
         backbtn = findViewById(R.id.backbtnprofilepage);
         logout = findViewById(R.id.logout);
+
+        faq = findViewById(R.id.FAQs);
+        about = findViewById(R.id.ABout);
+        contact = findViewById(R.id.Contact);
+        tnc = findViewById(R.id.TnC);
+        pnc =  findViewById(R.id.PnC);
+
+        pnc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PandC.class));
+
+            }
+        });
+
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Aboutpage.class));
+
+            }
+        });
+
+        tnc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), TandC.class));
+
+            }
+        });
+
+        contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Contactpage.class));
+
+            }
+        });
+
+
+        faq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FAQS.class));
+
+            }
+        });
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,6 +30,7 @@ public class Passwordchangepage extends AppCompatActivity {
     String usercurrentpassword;
 
     FirebaseUser firebaseUser;
+    TextView forgot;
 
 
     @Override
@@ -41,6 +44,15 @@ public class Passwordchangepage extends AppCompatActivity {
         backbtn = findViewById(R.id.backbtnpasswordhchange);
         resetbtn = findViewById(R.id.resetchane);
         verifybtn = findViewById(R.id.Authenticatchange);
+        forgot =findViewById(R.id.forgtpasschangepasspage);
+
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ForgotPasswordActivity.class));
+                finish();
+            }
+        });
 
         firebaseAuth = FirebaseAuth.getInstance();
         newpasschange.setEnabled(false);

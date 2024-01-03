@@ -372,6 +372,7 @@
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold"
+                            android:id="@+id/FAQs"
                             android:layout_marginLeft="5dp"
                             android:layout_weight="1"/>
 
@@ -403,6 +404,7 @@
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold"
+                            android:id="@+id/ABout"
                             android:layout_marginLeft="5dp"
                             android:layout_weight="1"/>
 
@@ -434,6 +436,7 @@
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold"
+                            android:id="@+id/Contact"
                             android:layout_marginLeft="5dp"
                             android:layout_weight="1"/>
 
@@ -498,6 +501,7 @@
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold"
+                            android:id="@+id/TnC"
                             android:layout_marginLeft="5dp"
                             android:layout_weight="1"/>
 
@@ -529,6 +533,7 @@
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold"
+                            android:id="@+id/PnC"
                             android:layout_marginLeft="5dp"
                             android:layout_weight="1"/>
 
