@@ -53,6 +53,9 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                                 Intent intent = new Intent(getApplicationContext(), LoginSignupActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
+                                if(firebaseAuth.getCurrentUser()!=null){
+                                    firebaseAuth.signOut();
+                                }
                                 finish();
 
                             }
