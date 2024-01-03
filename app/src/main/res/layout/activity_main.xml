@@ -97,8 +97,8 @@
                     android:layout_marginVertical="20dp"
                     app:iss_auto_cycle="true"
                     app:iss_corner_radius="20"
-                    app:iss_delay="6000"
-                    app:iss_period="1000"
+                    app:iss_delay="2000"
+                    app:iss_period="3500"
                     app:iss_text_align="CENTER" />
 
             </RelativeLayout>

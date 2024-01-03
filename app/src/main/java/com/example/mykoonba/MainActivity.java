@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
     ImageSlider imageSlider;
     ListView listView;
 
-
-
     CardView groupcardview,ByMediaType;
     LinearLayout networks;
     ArrayList<String> eventList;
@@ -60,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
         chatButton=findViewById(R.id.chatButton);
 
         myContribition=findViewById(R.id.ButonMyContribition);
+
+
+
+
+
+
+
 
         homebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -213,5 +218,4 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,eventList);
         listView.setAdapter(adapter);
     }
-
 }
