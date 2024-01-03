@@ -50,14 +50,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Email"
+                android:text="Email  *"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Email"
+                android:hint="Enter Email "
                 android:id="@+id/loginemail"
                 android:inputType="textEmailAddress"
                 android:textSize="15sp" />
@@ -74,7 +74,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="Password  *"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -227,6 +227,15 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/backward"
         android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

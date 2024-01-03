@@ -77,7 +77,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Full Name"
+                    android:text="Full Name  *"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
@@ -103,7 +103,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Mobile Number"
+                    android:text="Mobile Number  *"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
@@ -128,7 +128,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Email-id"
+                    android:text="Email-id  *"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
@@ -153,7 +153,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Password"
+                    android:text="Password (Min 8 digits) *"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
@@ -164,7 +164,7 @@
                    <EditText
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:hint="Password"
+                       android:hint="password"
                        android:textSize="15sp"
                        android:layout_weight="1"
                        android:inputType="textPassword"
@@ -190,7 +190,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Confirm Password"
+                    android:text="Confirm Password  *"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
@@ -229,15 +229,18 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Date of Birth"
+                    android:text="Date of Birth  *"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="dd/mm/yyy"
-                    android:inputType="date"
+                    android:hint="pick date"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:longClickable="false"
+                    android:clickable="true"
                     android:id="@+id/signdateofbirth"
                     android:textSize="15sp" />
 
@@ -281,6 +284,13 @@
         app:layout_constraintTop_toBottomOf="@+id/CreateAccount" />
 
 
-
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

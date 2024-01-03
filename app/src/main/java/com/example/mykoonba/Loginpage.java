@@ -14,6 +14,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,11 +45,13 @@ public class Loginpage extends AppCompatActivity {
     AppCompatButton back,google,facebook;
     TextView forgot,signup;
 
+
+
     AppCompatButton googlelogin;
     FirebaseDatabase database;
     GoogleSignInClient gcs;
     int RC_SIGN_IN = 20;
-
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +63,9 @@ public class Loginpage extends AppCompatActivity {
         signup=findViewById(R.id.textView4);
         back=findViewById(R.id.backloginbtn);
 //        googlelogin = findViewById(R.id.logingooglebtn);
+
+        progressBar=findViewById(R.id.progress_circular);
+        progressBar.setVisibility(View.GONE);
 
        auth = FirebaseAuth.getInstance();
        database = FirebaseDatabase.getInstance();
@@ -141,6 +147,7 @@ public class Loginpage extends AppCompatActivity {
                 String pass = loginpassword.getText().toString();
                 if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     if (!pass.isEmpty()){
+                        progressBar.setVisibility(View.VISIBLE);
                         auth.signInWithEmailAndPassword(email,pass)
                                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                     @Override
@@ -155,8 +162,11 @@ public class Loginpage extends AppCompatActivity {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
                                         Toast.makeText(Loginpage.this, "Login Failed ", Toast.LENGTH_SHORT).show();
+                                        progressBar.setVisibility(View.GONE);
                                     }
+
                                 });
+                       
                     }else{
                         loginpassword.setError("Password Cannot be Empty");
                     }

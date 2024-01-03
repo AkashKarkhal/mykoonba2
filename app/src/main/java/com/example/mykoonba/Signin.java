@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,8 +12,10 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +28,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.ktx.Firebase;
 
+import java.util.Calendar;
+
 public class Signin extends AppCompatActivity {
 
     private FirebaseAuth auth;
@@ -32,6 +37,7 @@ public class Signin extends AppCompatActivity {
     private AppCompatButton Createaccountbtn;
     private TextView Doyouaccount;
 
+    ProgressBar progressBar;
 
     AppCompatButton backbtn;
     TextView Alreadyaccount;
@@ -43,6 +49,12 @@ public class Signin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
+        auth = FirebaseAuth.getInstance();
+        signmail = findViewById(R.id.Emailidsignin);
+        signpass = findViewById(R.id.passwordsignin);
+        signconfrimpass = findViewById(R.id.confirmpasswordsignin);
+        Createaccountbtn = findViewById(R.id.CreateAccount);
+
         Createaccountbtn = findViewById(R.id.CreateAccount);
         Alreadyaccount = findViewById(R.id.Doyoualreadyaccount);
         backbtn = findViewById(R.id.BackbtnCreateaccount);
@@ -50,6 +62,9 @@ public class Signin extends AppCompatActivity {
         signdateofbirth = findViewById(R.id.signdateofbirth);
         signphnnumber = findViewById(R.id.signphnnumber);
 
+
+        progressBar=findViewById(R.id.progress_circular);
+        progressBar.setVisibility(View.GONE);
 
         ImageView passiconsign = findViewById(R.id.passiconsign);
         passiconsign.setImageResource(R.drawable.passhide);
@@ -86,8 +101,23 @@ public class Signin extends AppCompatActivity {
        });
 
 
+        signpass.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (signpass.getText().toString().length()<8){
+                    signpass.setError("Minimum 8 Digits Must be Required");
+                }
+            }
+        });
 
-
+        signconfrimpass.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (!signpass.getText().toString().equals(signconfrimpass.getText().toString()) ||signpass.getText().toString().equals(signconfrimpass.getText().toString()) && signconfrimpass.getText().toString().isEmpty()) {
+                    signconfrimpass.setError("Password Not matched");
+                }
+            }
+        });
 
 
         backbtn.setOnClickListener(new View.OnClickListener() {
@@ -106,13 +136,15 @@ public class Signin extends AppCompatActivity {
 
 
 
-//        auntenthcation---------------------------------------------------------------------------------------------------------------------------
+        signdateofbirth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog();
+            }
+        });
 
-        auth = FirebaseAuth.getInstance();
-        signmail = findViewById(R.id.Emailidsignin);
-        signpass = findViewById(R.id.passwordsignin);
-        signconfrimpass = findViewById(R.id.confirmpasswordsignin);
-        Createaccountbtn = findViewById(R.id.CreateAccount);
+
+//        auntenthcation---------------------------------------------------------------------------------------------------------------------------
 
 
         Createaccountbtn.setOnClickListener(new View.OnClickListener() {
@@ -130,44 +162,42 @@ public class Signin extends AppCompatActivity {
                     signfullname.requestFocus();
 
                 }
-                if (TextUtils.isEmpty(phnnumber)) {
+                else if (TextUtils.isEmpty(phnnumber)) {
                     signphnnumber.setError("Please Enter Your Correct Number");
                     signphnnumber.requestFocus();
 
                 }
-                if (phnnumber.length()!=10) {
+                else if (phnnumber.length()!=10) {
                     signphnnumber.setError("Please Enter Valid NumberY");
                     signphnnumber.requestFocus();
 
                 }
-                if (TextUtils.isEmpty(dateofbirth)){
+                else if (TextUtils.isEmpty(dateofbirth)){
                     signdateofbirth.setError("Please Enter Your Date of Birth");
                     signdateofbirth.requestFocus();
                 }
 
-                if (user.isEmpty()){
+                else if (user.isEmpty()){
                     signmail.setError("Email Cannot be Empty");
                 }
-                if (!Patterns.EMAIL_ADDRESS.matcher(user).matches()){
+                else if (!Patterns.EMAIL_ADDRESS.matcher(user).matches()){
                     signmail.setError("Plaese Enter Valid Email-id");
                 }
-                if (pass.isEmpty()){
+                else if (pass.isEmpty()){
                     signpass.setError("Password Cannot be Empty");
                 }
-                if (pass.length()<8){
+                else if (pass.length()<8){
                     signpass.setError("Minimum 8 Digits Must be Required");
                 }
-                if (confirmpass.isEmpty()){
+                else if (confirmpass.isEmpty()){
                     signconfrimpass.setError("Confirm Password Cannot be Empty");
                 }
-                if (!pass.equals(confirmpass) || pass.equals(confirmpass) && confirmpass.isEmpty()) {
+                else if (!pass.equals(confirmpass) || pass.equals(confirmpass) && confirmpass.isEmpty()) {
                     signconfrimpass.setError("Password Not matched");
                     signpass.clearComposingText();
                     signconfrimpass.clearComposingText();
                 }
-
                 else{
-
                     registerUser(user,pass,phnnumber,fullname,dateofbirth);
                 }
 
@@ -182,6 +212,7 @@ public class Signin extends AppCompatActivity {
     private void registerUser(String user, String pass, String phnnumber, String fullname, String dateofbirth) {
 
 
+        progressBar.setVisibility(View.VISIBLE);
         auth.createUserWithEmailAndPassword(user,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -209,15 +240,38 @@ public class Signin extends AppCompatActivity {
                     });
 
 
-
-
-
-
                 }
                 else{
                     Toast.makeText(Signin.this, "Account Creation Failed " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
+                progressBar.setVisibility(View.GONE);
             }
         });
+    }
+
+    private void showDatePickerDialog() {
+        // Get the current date
+        final Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        int day = c.get(Calendar.DAY_OF_MONTH);
+
+        // Create a new DatePickerDialog
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        // Handle the selected date
+                        String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                        // You can use the selectedDate as needed (e.g., display it, save it, etc.)
+
+                        signdateofbirth.setText(selectedDate);
+                    }
+                },
+                year, month, day);
+
+        // Show the DatePickerDialog
+        datePickerDialog.show();
     }
 }
