@@ -1,6 +1,8 @@
 package com.example.mykoonba;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,6 +50,14 @@ public class AdapterGroupList extends RecyclerView.Adapter<AdapterGroupList.View
 //                context.startActivity(i);
 //            }
 //        });
+
+        holder.item.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                showDeleteConfirmationDialog(holder.getAdapterPosition());
+                return true;
+            }
+        });
     }
 
     @Override
@@ -68,6 +78,30 @@ public class AdapterGroupList extends RecyclerView.Adapter<AdapterGroupList.View
 
 
         }
+    }
+
+
+    void showDeleteConfirmationDialog(final int position) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Are you sure you want to delete this Group?");
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Perform deletion here, for example, remove item from the list
+                arrayList.remove(position);
+                notifyItemRemoved(position);
+
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     void getListData() {
