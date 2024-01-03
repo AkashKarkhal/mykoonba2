@@ -96,6 +96,7 @@
                     android:textColor="@color/white"
                     android:layout_weight="1"
                     android:textSize="15sp"
+                    android:inputType="textPersonName"
                     android:id="@+id/NameofKoonbawhileCreatinggroup"
                     android:layout_margin="10dp"/>
 
